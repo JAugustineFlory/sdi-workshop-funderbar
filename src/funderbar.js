@@ -89,25 +89,25 @@ _.mathOrder = function(test){
 //_.same takes two parameters and returns whether they are the equal or not
 _.same = function(a,b){
   //Code Goes Below
-  
+  return (a == b);
 }
 
 //_.greater takes two numbers as parameters and checks if a is greater than b
 _.greater = function(a,b){
   //Code Goes Below
-  
+  return a > b;
 }
 
 //_.lessThan takes two numbers as parameters and checks if a is less than b
 _.lessThan = function(a,b){
   //Code Goes Below
-  
+  return a < b;
 }
 
 //_.falsyOrTruthy takes a parameter and determines whether it is TRUTHY or FALSY
 _.falsyOrTruthy = function(a){
    //Code Goes Below
-   
+   return a ? true : false;
 }
 
   //In the next tests you will be given four parameters to compare, sort of.
@@ -122,53 +122,103 @@ _.falsyOrTruthy = function(a){
   //_.andAnd will be using the && comparator
   _.andAnd = function(a,b,c,d) {
   //Code Goes Below
-  
+    let firstResult = (a && b);
+    let secondResult = (c && d);
+
+    if (firstResult && secondResult) {
+      return true;
+    } else {
+      return false;
+    };
   }
 
     //_.orOr will be using the || comparator
     _.orOr = function(a,b,c,d) {
       //Code Goes Below
-      
-      }
+      // let output = ((a || b) || (c || d));
+      // return output;
+      let firstResult = (a || b);
+      let secondResult = (c || d);
 
+      if (firstResult || secondResult) {
+        return true;
+      } else {
+        return false;
+      };
+    }
   //Control Flow
   //Create a basic if statement to pass the tests. 
   _.ifLogic = function(a, b){
     //Code Goes Below
-
+    if (a == b) {
+      return 'Great';
+    }
   }
 
     //Create a basic if else statement to pass the tests. 
     _.ifElseLogic = function(a, b){
       //Code Goes Below
-
+      if (a == b) {
+        return 'Great';
+      } else {
+        return 'Good';
+      }
     }
 
     //Using a for loop, iterate through the array passed. 
     //Return the array as a single string.
     _.forLoop = function(a){
       //Code Goes Below
-
+      let outputString = "";
+      for (let i = 0; i < a.length; i++) {
+        outputString += a[i];
+      };
+      return outputString;
     }
 
     //Using NESTED for loops, iterate through an array or arrays
     _.nestedForLoop = function(a){
       //Code Goes Below
-      
+      let sum = 0;
+      for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a[i].length; j++){
+          sum += a[i][j];
+        }
+      }
+      return sum;
     }
 
     //While looping through the array passed determine the data type of the element. If the element is a number add it to a variable. At the end return that variable. 
     //If an index in the array is not a number add 1 to the above mentioned variable
     _.forIfElseNum = function(a){
       //Code Goes Below
-
+      let sum = 0;
+      for (let i = 0; i < a.length; i++) {
+        // If element is a number add to sum
+        if ((typeof a[i]) == 'number') {
+          sum += a[i];
+        } else {
+          //else if element is not a number sum++
+          sum += 1;
+        };
+      };
+      return sum;
     }
 
     //This function is similar to the above function. Only this time you will be building a sentence rather than a total number. Loop through the array and concatenate the strings in it to make a sentence.
     //If an index in the array is not a string add and empty string ("") to the local variable
     _.forIfElseStr = function(a){
       //Code Goes Below
+      let outputString = "";
 
+      for (let i = 0; i < a.length; i++) {
+        if((typeof a[i]) == "string") {
+          outputString += a[i];
+        } else {
+          outputString += "";
+        }
+      }
+      return outputString;
     }
 
     //In this function you will loop though the passed in array. Prior to that you need to check the second parameter to determine what you will be returning. 
@@ -176,7 +226,13 @@ _.falsyOrTruthy = function(a){
     //You may notice you did this work already in previous functions but need to combine them in some way. Ideally, you should call the previous two functions in your implementation instead of copy/pasting the 'guts'.
     _.ifElseFor = function(a,b){
       //Code Goes Below
-
+      //_.forIfElseStr()
+      //_.forIfElseNum()
+      if (b == 'string') {
+        return _.forIfElseStr(a);
+      } else {
+        return _.forIfElseNum(a);
+      }
     }
 
     //PART III
