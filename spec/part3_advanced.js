@@ -42,9 +42,9 @@
       let obj = _.objectCreationBracket(firstName,lastName,zord);
       it('Create an object using bracket notation', function() {
         //Use bracket notation for the FILL_ME_IN portion. 
-        expect(obj[FILL_ME_IN]).to.eql('Tommy');
-        expect(obj[FILL_ME_IN]).to.eql('Oliver');
-        expect(obj[FILL_ME_IN]).to.eql('Dragon');
+        expect(obj['firstName']).to.eql('Tommy');
+        expect(obj["lastName"]).to.eql('Oliver');
+        expect(obj["zord"]).to.eql('Dragon');
       });
 
     });
@@ -57,9 +57,9 @@
       let obj = _.objectCreationDot(firstName,lastName,zord);
       it('Create an object using dot notation', function() {
         //Use dot notation for the FILL_ME_IN portion. 
-        expect(obj.FILL_ME_IN).to.eql('Tommy');
-        expect(obj.FILL_ME_IN).to.eql('Oliver');
-        expect(obj.FILL_ME_IN).to.eql('Dragon');
+        expect(obj.firstName).to.eql('Tommy');
+        expect(obj.lastName).to.eql('Oliver');
+        expect(obj.zord).to.eql('Dragon');
       });
 
     });
@@ -153,11 +153,11 @@
       zord : 'Tyrannosaurus'}
       it("Should return Object's value using given key", function(){
         expect(_.objectValue(green, 'zord')).to.eql('Dragon');
-        expect(_.objectValue(red, 'zord')).to.eql(FILL_ME_IN);
-        expect(_.objectValue(green, 'firstName')).to.eql(FILL_ME_IN);
-        expect(_.objectValue(red, 'firstName')).to.eql(FILL_ME_IN);
-        expect(_.objectValue(FILL_ME_IN)).to.eql('Lee');
-        expect(_.objectValue(FILL_ME_IN)).to.eql('Oliver');
+        expect(_.objectValue(red, 'zord')).to.eql('Tyrannosaurus');
+        expect(_.objectValue(green, 'firstName')).to.eql('Tommy');
+        expect(_.objectValue(red, 'firstName')).to.eql('Jason');
+        expect(_.objectValue(red, 'lastName')).to.eql('Lee');
+        expect(_.objectValue(green, 'lastName')).to.eql('Oliver');
       })
     });
     

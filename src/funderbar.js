@@ -246,19 +246,33 @@ _.falsyOrTruthy = function(a){
 
     _.objectCreationBracket = (a,b,c) =>{
       //Code Goes Below
+      let outputObject = {};
 
+      outputObject["firstName"] = a;
+      outputObject["lastName"] = b;
+      outputObject["zord"] = c;
+
+      return outputObject;
     }
 
     //Below you will be building a function that creates an object using dot notation (.). Within the function create and return an object. 
 
     _.objectCreationDot = (a,b,c) =>{
       //Code Goes Below
+      let outputObject = {};
+      
+      outputObject.firstName = a;
+      outputObject.lastName = b;
+      outputObject.zord = c;
 
+      return outputObject;
     }
 
     _.objectValue = (a,b) => {
       //Code Goes Below
-      
+      let output = '';
+
+      return a[b];
     }
     
 
@@ -270,7 +284,13 @@ _.falsyOrTruthy = function(a){
     //Loop through the given array and return the total sum of all the numbers in the array. 
     _.forOf = (a) => {
       //Code Goes Below
-      
+      let output = 0;
+      for (const num of a) {
+        if ((typeof num) == 'number'){
+          output += num;
+        }
+      }
+      return output;
     }
 
     //Loop through the given object and return an array of keys from the object. 
@@ -278,13 +298,24 @@ _.falsyOrTruthy = function(a){
     //example array.push(value)
     _.forInKeys = (a) =>{
       //Code Goes Below
-      
+      let output = [];
+
+      for (const item in a) {
+        output.push(item);
+      }
+      return output;
     }
 
     //Loop through the given object and return an array of values from the object. 
     //This is similar to the above function but needs a little digging to get the value. 
     _.forInValues = (a) =>{
       //Code Goes Below
+      let output = [];
+
+      for (const item in a) {
+        output.push(a[item]);
+      }
       
+      return output;
     }
 }());
